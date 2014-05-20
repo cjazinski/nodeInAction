@@ -39,7 +39,7 @@ function send404(response) {
 function sendFile(response, filePath, fileContents) {
  response.writeHead(200, {'content-type': mime.lookup(path.basename(filePath))} );
  response.end(fileContents);
- console.log('Node.js sent a file');
+ //console.log('Node.js sent a file');
 }
 
 function serveStatic(response, cache, absPath) {
@@ -55,7 +55,7 @@ function serveStatic(response, cache, absPath) {
       cache[absPath] = data;
       sendFile(response, absPath, data);
      }
-   }); //fs.readFile
+    }); //fs.readFile
    } else {
      send404(response);
    }
