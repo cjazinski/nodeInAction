@@ -69,8 +69,15 @@ $(document).ready(function() {
 
 	$('#sendMessage').focus();
 
-	$('#sendForm').submit(function() {
+	$('#sendMessage').keypress(function(e) {
+        if(e.which == 13) {
+			console.log('Enter Key');
+			processUserInput(chatApp, socket);
+		}
+	});
+
+	$('#sendBtn').on('click', function() {
+		//console.log('Processing Input');
 		processUserInput(chatApp, socket);
-		return false;
 	});
 }); //end document ready

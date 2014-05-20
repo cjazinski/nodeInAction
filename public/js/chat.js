@@ -5,7 +5,7 @@ var Chat = function(socket) {
 }
 
 Chat.prototype.sendMessage = function (room, data) {
-	var messaage = {
+	var message = {
 		room: room,
 		text: data
 	};
