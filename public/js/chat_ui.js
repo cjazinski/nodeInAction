@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 	$('#sendMessage').keypress(function(e) {
         if(e.which == 13) {
-			console.log('Enter Key');
+			//console.log('Enter Key');
 			processUserInput(chatApp, socket);
 		}
 	});
