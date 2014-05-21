@@ -5,13 +5,13 @@ module.exports = function(grunt) {
 	concat: {
 	  options: {
 	   // define a string to put between each file in the concatenated output
-		separator: ';'
+		separator: ';\n'
 	  },
 		dist: {
 		// the files to concatenate
 		    src: ['public/js/*.js'],
 		    // the location of the resulting JS file
-		    dest: 'dist/<%= pkg.name %>.js'
+		    dest: 'dist/js/<%= pkg.name %>.js'
 		}
 	},
 
@@ -22,15 +22,34 @@ module.exports = function(grunt) {
 	  },
 	  dist: {
 	    files: {
-	      'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+	      'dist/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 	    }
 	  }
+	},
+
+	less: {
+        development: {
+            options: {
+                paths: ["public/less/*.less"],
+                yuicompress: true
+            },
+            files: {
+                "dist/css/main.css": "public/less/*.less"
+            }
+        }
+    },
+
+	watch: {
+		files: ['public/js/*.js'],
+		tasks: ['default']
 	}
   });
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['concat', 'uglify']);
+	grunt.registerTask('default', ['concat', 'uglify', 'less']);
 
 };

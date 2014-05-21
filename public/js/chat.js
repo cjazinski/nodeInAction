@@ -1,5 +1,4 @@
 //JS equivalent of a class
-
 var Chat = function(socket) {
 	this.socket = socket;
 }
