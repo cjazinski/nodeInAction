@@ -29,3 +29,6 @@ dist
 
 # Users Environment Variables
 .lock-wscript
+
+#do Not include MAC
+.DS_Store
