@@ -22,6 +22,8 @@ function countWordsInText(text) {
 		for(var i in words) {
 			var word = words[i];
 			if (word) {
+				console.log('Word: ' + word);
+				console.log('WordCounts: ' + wordCounts[word]);
 				wordCounts[word] = (wordCounts[word]) ? wordCounts[word] + 1 : 1;
 			}
 		}
