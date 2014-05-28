@@ -13,7 +13,9 @@
     "redis": "^0.10.3",
     "hiredis": "^0.1.16",
     "mongodb": "^1.4.5",
-    "mongoose": "^3.8.11"
+    "mongoose": "^3.8.11",
+    "connect": "^2.17.3",
+    "connect-redis": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
