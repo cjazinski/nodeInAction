@@ -1,3 +1,9 @@
 This will follow the Node.js in Action book.
 
 Some of the stuff is just random examples. I've added a new folder for that
+
+** Important **
+
+Some of the stuff in the book doesn't work with the newer versions of the modules. I noticed I had to use
+formidable when the book did not. I looked it up and the bodyParser for files was being depreciated. So It might not follow
+book exactly.. But It should accomplish the same examples.. Just with updated syntax or modules.
